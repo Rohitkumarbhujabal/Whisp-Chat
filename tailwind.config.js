@@ -7,12 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['your-sans-font', 'system-ui', 'sans-serif'],
+        serif: ['Georgia', 'Cambria', 'serif'],
+        mono: ['Menlo', '"Courier New"', 'monospace'],
+        mono1: ['"Courier New"', 'Menlo', 'monospace']
+        // Add more font families here as needed
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class'
+    })
+  ],
 }
+
